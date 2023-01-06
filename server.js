@@ -1,4 +1,5 @@
 const express = require("express");
+
 const PORT = 8000;
 const database = require("./mongodb.js");
 
@@ -19,3 +20,7 @@ app.use("/api/register", require("./routes/api/register"));
 
 // Router API for Login
 app.use("/api/login", require("./routes/api/login"));
+
+// For Swagger
+const { swaggerUi, specs } = require("./Swagger.js");
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
