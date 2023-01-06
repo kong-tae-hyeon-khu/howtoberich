@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   const { id, password } = req.body;
   try {
-    let user = User.findOne({ id, password });
+    let user = await User.findOne({ id: id, password: password });
     if (user) {
       res.send("Login Success");
       return;
