@@ -16,3 +16,6 @@ app.use(express.json({ extended: false }));
 
 // Router API for Register
 app.use("/api/register", require("./routes/api/register"));
+
+// Router API for Login
+app.use("/api/login", require("./routes/api/login"));
